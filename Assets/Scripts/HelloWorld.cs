@@ -2,13 +2,23 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Player Settings")]
+    [Tooltip("The name of the player")]
+    [SerializeField]
+    private string playerName = "World";
+    [Tooltip("The score of the player")]
+    [SerializeField]
+    [Range(0, 100)]
+    private int playerScore = 0;
+
+    [HideInInspector]
+    public bool isPlayer;
+    
     void Start()
     {
-        Debug.Log("Hello, World!");
+        Debug.Log("Hello, " + playerName + "!");
     }
 
-    // Update is called once per frame
     void Update()
     {
         
